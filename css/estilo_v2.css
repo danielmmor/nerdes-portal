@@ -1,0 +1,457 @@
+@charset "utf-8";
+/* CSS Document */
+
+body {
+	font-family:'Open Sans', sans-serif;
+	line-height:1.5;
+	font-size:100%;
+	background-color:#FFF;
+	--bg-verde:#066839;
+}
+/* Pagina inteira */
+
+.cn_topo, 
+.cn_menu, 
+.cn_propaganda ul, 
+.conteudo, 
+.rodape {
+	padding-left:10%;
+	padding-right:10%;
+	margin:0;
+	zoom:1;
+}
+
+/* Inicio do cabecalho */
+
+/* container do topo */
+.cn_topo {
+	background:linear-gradient(
+		45deg,
+		#FFF 0%,
+		#E7FEF3 50%,
+		#A9FAD3 100%
+		);
+	height:116px;
+	position:relative;
+	display:block;
+	padding-top:17px;
+	padding-bottom:17px;
+	border-bottom:4px solid #FFF;
+}
+
+/* container do logo */
+.cn_topo .cn_logo {        
+	float:left;            
+	width:210px;
+	height:96px;
+	position:relative;
+	top:10px;  /*metade do que sobra pro height do topo, pra centralizar*/
+}
+
+/* span agindo como container (inline-block) do logo, dentro do a href */
+.cn_topo .cn_logo .logo {   
+	background:url(../Imagens/assinatura_horizontal_cor_completa2.svg);
+	width:210px;
+	height:95px;
+	display:inline-block;
+}
+
+.cn_topo .cn_logo_ex {
+	float:left;
+	width:auto;
+	height:auto;
+	margin-left:20px;
+	font-weight:600;    /*alteracoes de texto... */
+	font-size:17px;
+	line-height:1.3;
+	color:#000;
+	letter-spacing:2px;
+	transform:scale(1,0.95); /* W3C */  /* altura da letra*/
+	-webkit-transform:scale(1,0.95); /* Safari and Chrome */
+	-moz-transform:scale(1,0.95); /* Firefox */
+	-ms-transform:scale(1,0.95); /* IE 9 */
+	-o-transform:scale(1,0.95); /* Opera */
+}
+
+.cn_topo .topo_regiao {
+	float:right;
+	display:block;
+	width:50%;
+}
+
+/*container soh pros botoes de redes sociais*/
+.cn_topo .topo_regiao .cn_redes {
+	float:right;
+	width:auto;
+	height:28px;
+}
+
+/*estilos para todos os botoes*/
+.cn_topo .topo_regiao .cn_redes .redes {  
+	float:left;
+	width:28px;
+	height:28px;
+	margin-left:10px;
+}
+
+/*span proprios para cada logo de rede social dentro de a href, semelhante ao logo principal lah em cima*/
+.cn_topo .topo_regiao .cn_redes .facebook {
+	background:url(../Imagens/facebook-icone-icon.svg);
+}
+
+.cn_topo .topo_regiao .cn_redes .twitter {
+	background:url(../Imagens/twitter.svg);
+}
+
+.cn_topo .topo_regiao .cn_redes .linkedin {
+	background:url(../Imagens/linkedin-logo-copy.svg);
+}
+
+.cn_topo .topo_regiao .cn_redes .instagram {
+	background:url(../Imagens/insta.svg);
+}
+
+.cn_topo .topo_regiao .cn_redes .youtube {
+	background:url(../Imagens/Youtube_41206.svg);
+}
+
+.cn_topo .topo_regiao .cn_util {
+	float:right;
+	clear:both;
+	margin-top:70px;
+	padding:0;
+}
+
+.cn_topo .topo_regiao .cn_util ul {
+	margin:0;
+	padding:0;
+}
+
+.cn_topo .topo_regiao .cn_util ul li {
+	float:left;
+	margin-left:35px;
+	font-size:1.4vw;
+}
+
+.cn_topo .topo_regiao .cn_util ul li a {
+	text-decoration:none;
+	color:var(--bg-verde);
+}
+
+/* Fim do cabecalho */
+/* Inicio barra menu */
+
+.cn_menu {
+	background:linear-gradient(to right,
+		#52B67E 0%,
+		var(--bg-verde) 100%
+		);
+	height:35px;
+	display:block;
+	padding-top:10px;
+	padding-bottom:10px;
+	border-bottom:1px solid #FFF;
+	z-index:3;
+}
+
+/*para ele fixar na parte superior da janela depois do scroll, com javascript... a classe eh adicionada*/
+.fixed_menu {
+	position:fixed;
+	top:0;
+	padding-left:10%;
+	padding-right:10%;
+	width:80%;
+}
+
+/*para evitar um pequeno deslocamento na transicao de classes*/
+.fixed_menu + .cn_propaganda {
+	padding-top:56px;
+}
+
+.cn_menu .menu {
+	float:left;
+	width:80%;
+	height:33px;
+	position:relative;
+	top:2px;
+}
+
+.cn_menu .menu ul {
+	list-style:none;
+	display:inline;
+}
+
+.cn_menu .menu ul li {
+	margin-right:8%;
+	font-size:1.6vw;
+	float:left;
+	list-style:none;
+}
+
+.cn_menu .menu ul li a {
+	text-decoration:none;
+	color:#FFF;
+	border-top:3px solid transparent;
+	line-height:33px;
+	transition:border-color .2s ease-in;
+}
+
+.cn_menu .menu ul li a:hover {
+	border-top:3px solid #a9fad3;
+	color:#a9fad3;
+}
+
+.cn_menu .procurar {
+	width:20%;
+	float:right;
+	display:block;
+}
+
+.cn_menu .procurar .container-inline {
+	display:inline;
+}
+
+.cn_menu .procurar .container-inline .procurar_btn {
+	float:left;
+	width:100%;
+}
+
+.procurar .procurar_btn input.form-text {
+	border:none;
+	outline:none;
+	background-color:#FFF;
+	border-radius:12px;
+	margin:0;
+	padding:8px;
+	padding-right:35px;
+	box-sizing:border-box;
+	width:100%;
+	height:auto;
+}
+
+.procurar_btn input {
+	font-size:14px;
+	font-family:inherit;
+}
+
+.procurar .procurar_lupa {
+	display:inline;
+	position:relative;
+}
+
+.procurar .procurar_lupa input.form-submit {
+	background:transparent;
+	border:none;
+	border-radius:12px;
+	height:0;
+	width:25px;
+	padding-top:25px;
+	overflow:hidden;
+	margin:0;
+	position:absolute;
+	margin-top:4px;
+	margin-right:7px;
+	right:0;
+	z-index:20;
+	background-position:center;
+	background-repeat:no-repeat;
+	background-image:url(../Imagens/search-glass.png);
+	cursor:pointer;
+}
+
+/*Fim barra menu*/
+/*Inicio da pagina inicial*/
+
+.cn_propaganda {
+	height:auto;
+	margin-bottom:20px;
+	position:relative;
+	display:flex;
+}
+
+/*Inicio slide (container)*/
+.cn_propaganda .cn_slideshow {
+	width:100%;
+	padding-bottom:31%;
+	margin:0;
+	position:relative;
+	overflow:hidden;
+	display:block;
+	z-index:0;
+}
+
+/*container para o loop de cada foto*/
+.cn_propaganda .cn_slideshow .cn_foto {
+	animation:round 17.5s infinite;
+	opacity:0;
+	position:absolute;
+	top:0%;             
+	left:0%;
+	width:100%;
+}
+
+/*foto propriamente dita*/
+.foto {
+	height:auto;
+	width:100%;
+}
+
+/*cada imagem tem uma posicao e zoom diferente*/
+.f1 {                    
+	margin-top:-25%;     /* menos 0   -50%   -100% mais */
+	transform:scale(1.0);
+	margin-left:0%;
+}
+
+.f2 {
+	margin-top:-20%;
+	transform:scale(1.0);
+	margin-left:0%;
+}
+
+.f3 {
+	margin-top:-35%;
+	transform:scale(1.4);
+	margin-left:0%;
+}
+
+.f4 {
+	margin-top:-45%;
+	transform:scale(1.0);
+	margin-left:0%;
+}
+
+.f5 {
+	margin-top:-10%;
+	transform:scale(1.15);
+	margin-left:0%;
+}
+
+/*para transitar entre fotos*/
+@keyframes round {   
+	25% {
+		opacity:1;
+	}
+	40% {
+		opacity:0;
+	}
+}
+
+/*momento de entrada de cada foto, associado ao container de loop*/
+.cn_propaganda .cn_slideshow .cn_foto:nth-child(1) {
+	animation-delay:0s;
+}
+
+.cn_propaganda .cn_slideshow .cn_foto:nth-child(2) {
+	animation-delay:3.5s;
+}
+
+.cn_propaganda .cn_slideshow .cn_foto:nth-child(3) {
+	animation-delay:7s;
+}
+
+.cn_propaganda .cn_slideshow .cn_foto:nth-child(4) {
+	animation-delay:10.5s;
+}
+
+.cn_propaganda .cn_slideshow .cn_foto:nth-child(5) {
+	animation-delay:14s;
+}
+
+/*Fim slide*/
+
+.cn_propaganda ul {
+	float:left;
+	width:70%;
+	height:auto;
+	position:absolute;
+	bottom:3%;
+}
+
+.cn_propaganda ul li {
+	font-size:2.15vw;
+	display:inline;
+	padding:0.5% 2%;
+}
+
+.cn_propaganda .desc1 {
+	color:#000;
+	background-color:#FFF;
+}
+
+.cn_propaganda .desc2 {
+	color:#FFF;
+	background-color:var(--bg-verde);
+}
+
+.cn_propaganda ul a {
+	color:#FFF;
+	text-decoration:underline;
+}
+
+.conteudo {
+	height:800px;
+	display:flex;
+	align-items:center;
+	justify-content:center;
+}
+
+.conteudo .construcao {
+	width:400px;
+	height:200px;
+}
+
+.conteudo .construcao img {
+	width:100%;
+	height:auto;
+}
+
+/*Fim pagina inicial*/
+/*Inicio rodape*/
+
+/*divisoria*/
+.division {
+	margin-left:10%;
+	margin-right:10%;
+	height:1px;
+	background-color:var(--bg-verde);
+}
+
+.rodape {
+	padding-top:40px;
+	padding-bottom:40px;
+	height:80px;
+	background-color:white;
+	display:flex;
+	align-items:center;
+	justify-content:space-between;
+}
+
+.rodape .cn_ufrj_logo {
+	float:left;
+	width:150px;
+	height:70px;
+	margin:0;
+	overflow:hidden;
+}
+
+.rodape .cn_ufrj_logo .ufrj_logo {
+	background:url(../Imagens/008minerva_hor_vet_corte.svg);
+	width:165px;
+	height:125px;
+	display:inline-block;
+	position:relative;
+	top:-20px;
+}
+
+.rodape .cn_ima_logo {
+	height:60px;
+	width:200px;
+	margin:0;
+	align-self:center;
+}
+
+.rodape .cn_ima_logo img {
+	height:100%;
+	width:auto;
+}
